@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>project filter</title>
+</head>
+<body>
+
+<header>
+    <div>
+        <h1>
+            My Edite
+        </h1>
+    </div>
+    <div id="navbar">
+        <nav>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">My Account</a>
+            <a href="#" class="a">Log in</a>
+        </nav>
+    </div>
+
+</header>
+
+<div class="Edite">
+    <div>
+        <h4 id="removebackground">Remove background</h4>
+        <h4>Cropping</h4>
+        <h4>Ready-made image</h4>
+        <h4>Save image</h4>
+    </div>
+    
+</div>
+
+<div class="container">
+     <div class="img">
+        <div class="img-box">
+             <img id="img">
+        </div>
+        <div class="upload">
+            <label for="upload">upload</label>
+            <input type="file" id="upload" placeholder=".......">
+        </div>
+      </div>
+     <div class="filters">
+        <ul>
+            <li>
+                <label for="saturate">saturate</label>
+                <input type="range" id="saturate" min="0" max="200" value="70">
+            </li>
+
+            <li>
+                <label for="Contrast">Contrast</label>
+                <input type="range" id="Contrast" min="0" max="200" value="100">
+            </li>
+
+            <li>
+                <label for="brightnes">brightnes</label>
+                <input type="range" id="brightnes" min="0" max="200" value="100">
+            </li>
+
+            <li>
+                <label for="sepia">sepia</label>
+                <input type="range" id="sepia" min="0" max="200" value="0">
+            </li>
+
+            <li>
+                <label for="grayscale">grayscale</label>
+                <input type="range" id="grayscale"   min="0" max="100" value="0">
+            </li>
+
+            <li>
+                <label for="blue">blur</label>
+                <input type="range" id="blur"  step="0.1" min="0" max="100" value="0">
+            </li>
+
+            <li>
+                <label for="hue-rotate">hue-rotate</label>
+                <input type="range" id="hue-rotate" min="0" max="350" value="0">
+            </li>
+            
+            
+
+            <li>
+                <a href="image" download="image" id="download">download</a>
+                <span>Rest</span>
+            </li>
+            
+        </ul>
+     </div>
+</div>
+
+
+<footer>
+
+</footer>
+
+    <script src="script2.js"></script>
+</body>
+</html>
