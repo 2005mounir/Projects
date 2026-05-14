@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact DCT Mounir Medical Center - Get in touch with us for appointments, inquiries, or emergency assistance.">
+    <title>Contact Us - DCT Mounir Medical Center</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="main-header">
+    <div class='logo'>
+        <h2><span>DCT</span>Mounir</h2>
+    </div>
+    <nav class='navbar'>
+        <a href="home.html">Home</a>
+        <a href="hospital.html">Hospital</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="form.html" class="cta-button">Consultation</a>
+    </nav>
+</header>
+
+<main class="main-content">
+    <div class="page-title">
+        <h1>Get In Touch</h1>
+        <p>We're here to help and answer any questions you might have</p>
+    </div>
+
+    <!-- Contact Information Cards -->
+    <div class="contact-grid">
+        <div class="contact-card">
+            <div class="contact-icon">📍</div>
+            <h3>Visit Us</h3>
+            <p>123 Healthcare Avenue</p>
+            <p>Medical District, CA 90210</p>
+            <p class="detail">Open 24/7 for emergencies</p>
+        </div>
+
+        <div class="contact-card">
+            <div class="contact-icon">📞</div>
+            <h3>Call Us</h3>
+            <p>Emergency: <strong>+1 (800) 123-4567</strong></p>
+            <p>Appointments: <strong>+1 (800) 765-4321</strong></p>
+            <p class="detail">Available 24/7</p>
+        </div>
+
+        <div class="contact-card">
+            <div class="contact-icon">✉️</div>
+            <h3>Email Us</h3>
+            <p>General Inquiries: <strong>info@dctmounir.com</strong></p>
+            <p>Support: <strong>support@dctmounir.com</strong></p>
+            <p class="detail">Response within 24h</p>
+        </div>
+
+        <div class="contact-card">
+            <div class="contact-icon">🕐</div>
+            <h3>Working Hours</h3>
+            <p>Monday - Friday: 8:00 AM - 8:00 PM</p>
+            <p>Saturday: 9:00 AM - 5:00 PM</p>
+            <p>Sunday: Emergency Only</p>
+        </div>
+    </div>
+
+    <!-- Contact Form -->
+    <div class="contact-form-section">
+        <h2>Send Us a Message</h2>
+        <p>Fill out the form below and we'll get back to you as soon as possible</p>
+        
+        <form action="#" method="post">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fullname">Full Name *</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Ali Alaoui" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="contact@example.com" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+212 XXX XXX XXX">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject *</label>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>Select a subject</option>
+                        <option value="appointment">Appointment Request</option>
+                        <option value="inquiry">General Inquiry</option>
+                        <option value="emergency">Emergency Assistance</option>
+                        <option value="feedback">Feedback / Suggestion</option>
+                        <option value="billing">Billing Question</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" placeholder="Please describe your inquiry or message here..." required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message →</button>
+        </form>
+    </div>
+
+    <!-- Map Section -->
+    <div class="map-section">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3305.874845231748!2d-118.24644568478367!3d34.05223429280001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c75ddc27da13%3A0xe22fdf6f254608f4!2sLos%20Angeles%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="DCT Mounir Medical Center Location Map">
+        </iframe>
+    </div>
+</main>
+
+<footer class="main-footer">
+    <p>&copy; 2024 DCT Mounir Medical Center. All rights reserved. | Compassion · Innovation · Excellence</p>
+</footer>
+
+<!-- Simple form submission handling (prevents page reload for demo) -->
+<script>
+    // Prevent actual form submission for demo - you can connect to your backend
+    const form = document.querySelector('form');
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Get form data
+            const fullname = document.getElementById('fullname')?.value || '';
+            const email = document.getElementById('email')?.value || '';
+            const subject = document.getElementById('subject')?.value || '';
+            const message = document.getElementById('message')?.value || '';
+            
+            if (fullname && email && subject && message) {
+                alert(`Thank you ${fullname}! Your message has been sent successfully.\nWe will respond within 24 hours.`);
+                form.reset();
+            } else {
+                alert('Please fill in all required fields (*)');
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
