@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XO Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="game-card">
+
+    <h1 class="game-title">
+      <span class="x">X</span> vs <span class="o">O</span>
+    </h1>
+
+    <div class="scoreboard">
+      <div class="score-box x-box">
+        <div class="score-label">Player X</div>
+        <div class="score-num" id="score-x">0</div>
+      </div>
+      <div class="score-draw">
+        <div class="score-label">Draw</div>
+        <div class="score-num" id="score-d">0</div>
+      </div>
+      <div class="score-box o-box">
+        <div class="score-label">Player O</div>
+        <div class="score-num" id="score-o">0</div>
+      </div>
+    </div>
+
+    <div class="status-bar">
+      <div id="status">
+        Turn: <span class="symbol x" id="turn-sym">X</span>
+      </div>
+    </div>
+
+    <div id="container">
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+      <div class="div"></div>
+    </div>
+
+    <button class="btn" id="btn">↺ &nbsp; Restart</button>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+/*  Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*  Page  */
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #0f0f13;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card  */
+.game-card {
+  background: #1a1a24;
+  border: 1px solid #2a2a3a;
+  border-radius: 20px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 380px;
+}
+
+/* Title */
+.game-title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #e8e8f0;
+  margin-bottom: 1.75rem;
+}
+.game-title .x { color: #5b8ff9; }
+.game-title .o { color: #f97f7f; }
+
+/* Scoreboard  */
+.scoreboard {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+  align-items: center;
+}
+
+.score-box {
+  background: #12121a;
+  border: 1px solid #2a2a3a;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  text-align: center;
+}
+.score-box.x-box { border-color: #2a3a5a; }
+.score-box.o-box { border-color: #3a2a2a; }
+
+.score-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555566;
+  margin-bottom: 4px;
+}
+
+.score-num { font-size: 1.75rem; font-weight: 700; }
+.score-box.x-box .score-num { color: #5b8ff9; }
+.score-box.o-box .score-num { color: #f97f7f; }
+
+.score-draw { text-align: center; }
+.score-draw .score-label { font-size: 10px; color: #444455; margin-bottom: 2px; }
+.score-draw .score-num   { font-size: 1.1rem; font-weight: 600; color: #444455; }
+
+/*Status bar */
+.status-bar {
+  text-align: center;
+  min-height: 36px;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #888899;
+}
+
+.symbol   { font-weight: 700; font-size: 15px; }
+.symbol.x { color: #5b8ff9; }
+.symbol.o { color: #f97f7f; }
+
+.win-msg {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 5px 18px;
+  border-radius: 8px;
+}
+.win-msg.x    { background: #1a2340; color: #5b8ff9; border: 1px solid #2a3a5a; }
+.win-msg.o    { background: #2a1a1a; color: #f97f7f; border: 1px solid #3a2a2a; }
+.win-msg.draw { background: #1a1a26; color: #888899; border: 1px solid #2a2a3a; }
+
+/* Board  */
+#container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+/* Cells  */
+.div {
+  aspect-ratio: 1;
+  border-radius: 12px;
+  border: 1px solid #2a2a3a;
+  background: #12121a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  user-select: none;
+}
+
+.div:hover:not(.taken) {
+  background: #1e1e2e;
+  border-color: #3a3a4a;
+}
+
+.div:active:not(.taken) { transform: scale(0.93); }
+
+.div.x { color: #5b8ff9; border-color: #2a3a5a; background: #14192e; cursor: default; }
+.div.o { color: #f97f7f; border-color: #3a2424; background: #1e1414; cursor: default; }
+
+/* winning highlight */
+.div.win-cell          { border-width: 2px; animation: pulse 0.5s ease; }
+.div.x.win-cell        { border-color: #5b8ff9; background: #1a2240; }
+.div.o.win-cell        { border-color: #f97f7f; background: #261818; }
+
+/* pop-in when placed */
+.div.pop { animation: popin 0.2s cubic-bezier(.36,.07,.19,.97); }
+
+@keyframes popin {
+  0%   { transform: scale(0.4); opacity: 0; }
+  100% { transform: scale(1);   opacity: 1; }
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1);    }
+  50%  { transform: scale(1.07); }
+  100% { transform: scale(1);    }
+}
+
+/*Restart button*/
+.btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #2a2a3a;
+  background: #1e1e2c;
+  color: #888899;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.btn:hover  { background: #252535; color: #c0c0d8; border-color: #3a3a4a; }
+.btn:active { transform: scale(0.98); }
